@@ -32,7 +32,6 @@ contract MoodNft is ERC721 {
         address owner = ownerOf(tokenId);
         // Only want the owner of NFT to change the mood.
         _checkAuthorized(owner, msg.sender, tokenId);
-
         if (s_tokenIdToMood[tokenId] == Mood.HAPPY) {
             s_tokenIdToMood[tokenId] = Mood.SAD;
         } else {
